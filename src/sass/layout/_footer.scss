@@ -1,0 +1,126 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.footer {
+  background-color: rgba(0, 0, 0, 1);
+  overflow: hidden;
+  padding: 20px 0 30px 0;
+  @media (max-width: $breakpoint-md) {
+    padding: 19px 0 32px 0;
+  }
+
+  &-logo {
+    max-width: 300px;
+    display: block;
+    margin-bottom: 14px;
+    @media (max-width: $breakpoint-md) {
+      position: relative;
+      margin: 0 auto 10px auto;
+    }
+  }
+
+  & .copyright {
+    @include fontSize(14, 16);
+    @media (max-width: $breakpoint-md) {
+      text-align: center;
+      margin-bottom: 23px;
+    }
+  }
+
+  & .menu {
+    display: flex;
+    flex-wrap: wrap;
+
+
+    @media (max-width: $breakpoint-md) {
+      display: inline-block;
+      text-align: center;
+    }
+
+    &-item {
+      flex: 0 0 50%;
+
+      &:nth-child(1), &:nth-child(2) {
+        margin-bottom: 20px;
+      }
+
+      & + .menu-item {
+        //margin-top: 15px;
+      }
+
+      & a {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 1.25;
+        color: $whiteColor;
+        @include transition(.3);
+
+        &:hover {
+          color: $accentColor;
+        }
+      }
+    }
+  }
+
+  & .social {
+    &__heading {
+      font-size: 20px;
+      color: $whiteColor;
+      margin-bottom: 20px;
+      @media (max-width: $breakpoint-md) {
+        display: none;
+      }
+    }
+
+    &__list {
+      @media (max-width: $breakpoint-md) {
+
+        margin: 25px auto 30px auto;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        &-wrap {
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+          margin-top: 4px;
+          -webkit-box-pack: center;
+          -webkit-justify-content: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+
+  & a {
+    @include transition(.4);
+
+    &:hover {
+      color: $accentColor;
+    }
+  }
+
+  .develop {
+    @media (min-width: $breakpoint-md) {
+      display: block;
+    }
+
+    &__logo {
+      @media (max-width: $breakpoint-md) {
+        width: 100px;
+      }
+    }
+
+    &__description {
+      font-size: 15px;
+      @media (min-width: $breakpoint-md) {
+        margin-bottom: 14px;
+      }
+      @media (max-width: 360px) {
+        margin-bottom: 14px;
+      }
+
+    }
+  }
+}
+

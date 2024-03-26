@@ -1,0 +1,80 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.kama_breadcrumbs {
+
+  &__wrap {
+
+  }
+
+  @media (min-width: $breakpoint-md) {
+    //display: flex;
+  }
+
+  font-weight: 300;
+  line-height: 1.6;
+
+
+  background-color: transparent;
+  padding: 12px 0;
+
+  font-size: 18px;
+  color: $whiteColor;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: block;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  z-index: 2;
+  position: relative;
+  @include transition(.4);
+  overflow: auto;
+  border-bottom: 1px solid rgba(255, 255, 255, .2);
+
+  & a {
+    position: relative;
+
+    &:after {
+      content: '';
+      background-color: #8FC04F;
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      width: 0;
+      height: 1px;
+      z-index: 1;
+      transition: width ease-out .3s;
+    }
+
+    &:hover {
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+
+  & span {
+
+  }
+
+  & .kb {
+    &_sep {
+      color: #AFAFAF;
+      margin: 0 6px;
+      @media (max-width: $breakpoint-md) {
+        margin: 0 3px;
+      }
+    }
+
+    &_title {
+      color: #797979;
+    }
+  }
+}
+

@@ -1,0 +1,642 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.fraction {
+  &__wrap {
+    z-index: 2;
+    width: 60px;
+    margin-left: 18px;
+  }
+
+  &__current, &__total {
+
+  }
+
+  &__current {
+    font-size: 30px;
+  }
+
+  &__total {
+    color: #797979;
+    font-size: 18px;
+    position: relative;
+
+    &:after {
+      content: '/';
+      position: absolute;
+      left: -7px;
+    }
+  }
+}
+
+.s-main {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  @media (max-width: $breakpoint-md) {
+
+    min-height: 600px;
+  }
+
+  .fraction {
+    &__wrap {
+
+    }
+  }
+
+
+  &__inner {
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
+    overflow: hidden;
+    width: 10000px;
+    height: 100vh;
+
+    @media (max-width: $breakpoint-md) {
+
+      min-height: 700px;
+
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    bottom: 80px;
+    width: 100%;
+    max-width: 1180px;
+    margin: auto;
+    padding: 0 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+  }
+
+  & .heading {
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 35px;
+    }
+
+  }
+
+  & .description {
+    margin-bottom: 42px;
+
+  }
+
+
+  .parallax-bg {
+    overflow-y: hidden;
+
+    .bg {
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-attachment: scroll;
+      background-size: cover;
+      background-position: top;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+
+      &:after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, .3) 50%);
+        top: 0;
+        position: absolute;
+      }
+    }
+  }
+
+  & .swiper {
+
+    &-button {
+      &-prev {
+        margin-right: 0;
+
+        left: 0;
+      }
+
+      &-next {
+        margin-left: 0;
+        right: 0;
+      }
+
+      &__wrap {
+
+      }
+    }
+
+    &-entry {
+      overflow: hidden;
+      padding-top: 0;
+    }
+
+    &-slide {
+      overflow: hidden;
+    }
+
+
+    &-container {
+      height: 100vh;
+      padding-bottom: 0;
+      @media (max-width: $breakpoint-md) {
+        height: auto;
+      }
+    }
+  }
+
+  .parallax-bg__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+
+    &-wrap {
+      width: 100%;
+      height: 100%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-flow: row wrap;
+      flex-flow: row wrap;
+    }
+  }
+}
+
+.s-advantages {
+  margin: 100px 0;
+
+  @media (max-width: $breakpoint-md) {
+    margin: 50px 0;
+  }
+
+  & .m-row {
+
+    @media (max-width: $breakpoint-sm) {
+      margin: 0 -7.5px;
+    }
+  }
+
+  & .column {
+    @media (max-width: $breakpoint-sm) {
+      padding: 0 7.5px;
+    }
+  }
+
+  .advantage {
+    &__icon {
+      max-width: 60%;
+      max-height: 60%;
+      object-fit: contain;
+
+      &-wrap {
+        height: 75px;
+        width: 75px;
+        background-color: #444F5C;
+        position: absolute;
+        top: -40px;
+        left: 30px;
+        @media (max-width: $breakpoint-md) {
+          height: 71px;
+          width: 71px;
+          left: 10px;
+        }
+      }
+    }
+
+    &__title {
+      @include fontSize(20, 22);
+    }
+
+    &__desc {
+      font-size: 17px;
+    }
+
+    &__item {
+      background: #1C2127;
+      padding: 64px 30px 15px 30px;
+      width: 100%;
+      margin-top: 40px;
+      @media (max-width: $breakpoint-md) {
+        margin-bottom: 20px;
+        padding: 54px 5px 25px 5px;
+        text-align: center;
+      }
+    }
+  }
+
+}
+
+.swiper-container {
+  opacity: 0;
+  @include transition(.5);
+
+  &.swiper-initialized {
+    opacity: 1;
+  }
+}
+
+.s-about {
+  margin-bottom: 100px;
+  @media (max-width: $breakpoint-md) {
+    margin-bottom: 60px;
+  }
+
+  & .heading {
+    margin-top: 30px;
+  }
+
+  &__img {
+    object-fit: cover;
+
+    &:nth-child(1) {
+      width: 90%;
+      height: 80%;
+    }
+
+    &:nth-child(2) {
+      border: 20px solid #13171A;
+      border-width: 20px 0 0 20px;
+      width: 290px;
+      height: 290px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      @media (max-width: $breakpoint-md) {
+        width: 190px;
+        height: 190px;
+        border-width: 13px 0 0 13px;
+      }
+    }
+
+    &-wrap {
+      position: relative;
+      height: 100%;
+      min-height: 600px;
+      max-width: 580px;
+      @media (max-width: $breakpoint-md) {
+        min-height: 385px;
+        max-width: 375px;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  .editor-style {
+    & ul {
+      margin-left: 28px;
+
+      & li {
+        &:before {
+          background: $whiteColor;
+        }
+      }
+    }
+  }
+}
+
+.s-gym {
+  margin-bottom: 100px;
+  @media (max-width: $breakpoint-md) {
+    margin-bottom: 25px;
+  }
+
+  .gym-card {
+    margin-bottom: 30px;
+    display: block;
+
+    &__title {
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: rgba(255, 255, 255, .2);
+      @include fontSize(40, 50);
+      color: transparent;
+      position: absolute;
+      bottom: 5px;
+      right: 10px;
+    }
+
+    &__img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      &-wrap {
+        padding-bottom: 62%;
+        min-height: 280px;
+      }
+    }
+
+    .btn-primary {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 14px 15px 14px 45px;
+      text-align: center;
+      font-size: 22px;
+      min-width: 225px;
+      z-index: 2;
+
+      & i {
+        position: absolute;
+        top: -20px;
+        left: -20px;
+        width: 50px;
+        height: 50px;
+        background: #13171A;
+      }
+    }
+  }
+
+}
+
+.s-timetable {
+  padding: 95px 0 85px 0;
+  @media (max-width: $breakpoint-md) {
+    padding: 25px 0;
+  }
+
+  & .description {
+    font-size: 25px;
+    line-height: 1.5;
+    margin-top: 38px;
+  }
+
+  & .img {
+    width: 100%;
+
+    &__wrap {
+      width: 100%;
+    }
+  }
+}
+
+
+.s-trainers {
+  padding: 97px 0 100px 0;
+  background: #1C2127;
+  @media (max-width: $breakpoint-md) {
+    padding: 50px 0;
+  }
+  @media (min-width: $breakpoint-md) {
+    & .swiper-button__wrap {
+      position: absolute;
+      top: 0;
+      right: 15px;
+    }
+  }
+
+  .trainer {
+    &__img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      &-wrap {
+        margin-bottom: 18px;
+        padding-bottom: 120%;
+      }
+    }
+
+    &__name {
+      margin-bottom: 13px;
+      @include fontSize(25, 30);
+    }
+  }
+}
+
+.club-card {
+  &__column {
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 40px;
+    }
+
+    &:nth-child(1) {
+      & .club-card__img-wrap {
+        background: #FA5721;
+      }
+    }
+
+    &:nth-child(2) {
+      & .club-card__img-wrap {
+        background: #9C9C9C;
+      }
+    }
+
+    &:nth-child(3) {
+      & .club-card__img-wrap {
+        background: #A18849;
+      }
+    }
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: .3;
+
+    &-wrap {
+      padding-bottom: 62%;
+      position: relative;
+      margin-bottom: 33px;
+      border-radius: 20px;
+      overflow: hidden;
+      @media (max-width: $breakpoint-md) {
+        margin-bottom: 25px;
+      }
+    }
+  }
+
+  &__logo {
+    position: absolute;
+    width: 70%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__heading {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(255, 255, 255, 0.2);
+    font-size: 70px;
+    color: transparent;
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+}
+
+.s-services {
+  padding: 100px 0;
+  @media (max-width: $breakpoint-md) {
+    padding: 50px 0;
+  }
+
+  .cards-wrapper {
+
+  }
+
+  .card-container {
+    perspective: 1200px;
+  }
+
+  .card {
+    margin: 0 auto;
+    min-height: 580px;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    border-radius: 0;
+    transition: all 1s ease;
+    transform-style: preserve-3d;
+
+    &.rotated {
+      transform: rotateY(-180deg);
+    }
+
+    &__front {
+
+      transform-style: preserve-3d;
+
+
+    }
+
+    &__back, &__front {
+      background: rgba(0, 0, 0, 1);
+
+      & img {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        object-fit: cover;
+        opacity: 0.2;
+      }
+    }
+
+    &__back {
+      padding: 20px;
+      border: 5px solid #444F5C;
+      transform: rotateY(180deg);
+
+      transform-style: preserve-3d;
+    }
+
+    &__depth {
+      transform: translateZ(100px) scale(0.98);
+      perspective: inherit;
+
+    }
+  }
+
+
+  .card-contents {
+    width: 100%;
+    height: 100%;
+    min-height: 580px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+
+
+  }
+
+
+}
+
+.s-club-cards {
+  padding: 100px 0;
+  @media (max-width: $breakpoint-md) {
+    padding: 50px 0;
+  }
+  &.bg {
+    background: #1C2127;
+  }
+
+  &:not(.bg) {
+    & .container {
+      position: relative;
+
+      &:after {
+        content: '';
+        width: calc(100% - 30px);
+        background: rgba(255, 255, 255, .2);
+        height: 1px;
+        position: absolute;
+        top: -100px;
+        left: 15px;
+        @media (max-width: $breakpoint-md) {
+          top: -50px;
+          left: 0;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint-md) {
+    padding: 50px 0;
+
+  }
+
+
+  & .btn-primary {
+    margin: 0 auto;
+  }
+}
+
+.s-personal-training {
+  margin-bottom: 102px;
+  @media (max-width: $breakpoint-md) {
+    margin-bottom: 45px;
+  }
+
+  & .description {
+    margin-bottom: 32px;
+  }
+
+  & .img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    mask-image: url(../img/mask.svg);
+    mask-mode: alpha;
+
+    &__wrap {
+      padding-bottom: 100%;
+      position: relative;
+    }
+  }
+}
+

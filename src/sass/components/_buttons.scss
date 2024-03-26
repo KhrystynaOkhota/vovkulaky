@@ -1,0 +1,124 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.btn {
+  position: relative;
+  box-shadow: none;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  font-family: 'aa_bebasneue', sans-serif;
+
+  padding: 17px 38px 16px 38px;
+  text-align: center;
+  border-radius: 0;
+  font-size: 20px;
+  text-transform: uppercase;
+  line-height: 1;
+  border: none;
+  @include transition(.4);
+
+  &:focus {
+    outline: none;
+  }
+
+  &-primary {
+
+    color: $whiteColor;
+    background-color: $accentColor;
+    border: none;
+
+
+    min-width: 205px;
+
+
+    @include transition(.3);
+    @media (max-width: $breakpoint-lg) {
+
+    }
+
+    &:hover {
+      color: $primaryColor;
+      border-color: #C9DAFF;
+    }
+  }
+
+  &-close {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+
+    & i {
+      font-size: 18px;
+      color: $whiteColor;
+      @include transition(.5);
+    }
+
+    &:hover {
+      & i {
+        color: $accentColor;
+      }
+    }
+  }
+
+  &-pulse {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, .1);
+    border-radius: 100%;
+    cursor: pointer;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    @media (max-width: $breakpoint-md) {
+      width: 65px;
+      height: 65px;
+    }
+
+    &__img {
+      position: absolute;
+      z-index: 3;
+      -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+      left: 50%;
+      width: 35px;
+      height: 35px;
+      background: transparent;
+      background-size: contain;
+    }
+
+    &:after, &:before {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 1);
+      border-radius: 100%;
+      z-index: -1;
+
+    }
+
+    &:before {
+      animation: pulse 2s ease-out infinite;
+      opacity: 0.3;
+    }
+
+    &:after {
+      animation: pulse 2s 1s ease-out infinite;
+      opacity: 0.5;
+    }
+  }
+}
+
+@keyframes pulse {
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}

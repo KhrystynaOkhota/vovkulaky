@@ -1,0 +1,114 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.text {
+  &-right {
+    text-align: right;
+  }
+
+  &-center {
+    text-align: center;
+  }
+
+  &-left {
+    text-align: left;
+  }
+
+  &-justify {
+    text-align: justify;
+  }
+
+  &-uppercase {
+    text-transform: uppercase;
+  }
+
+  &-light {
+    font-weight: 300;
+  }
+
+  &-regular {
+    font-weight: 400;
+  }
+
+  &-medium {
+    font-weight: 500;
+  }
+
+  &-semibold {
+    font-weight: 600;
+  }
+
+  &-bold {
+    font-weight: 700;
+  }
+
+  &-m {
+    @include fontSize(16, 18);
+    line-height: 1.5;
+    font-weight: 300;
+  }
+
+  &-l {
+    @include fontSize(40,50);
+    line-height: 1.25;
+
+  }
+
+  &-xl {
+    @include fontSize(40, 70);
+    line-height: normal;
+    font-weight: normal;
+  }
+}
+
+.heading-font {
+  font-family: 'aa_bebasneue', sans-serif;
+}
+
+.icon-ar-left:before {
+  content: "\e900";
+}
+
+.icon-ar-right:before {
+  content: "\e901";
+}
+
+.icon-ar-top:before {
+  content: "\e902";
+}
+
+.icon-clock:before {
+  content: "\e903";
+}
+
+.icon-facebook:before {
+  content: "\e904";
+}
+
+.icon-instagram:before {
+  content: "\e905";
+}
+
+.icon-phone:before {
+  content: "\e906";
+}
+
+.icon-pin:before {
+  content: "\e907";
+}
+
+.icon-telegram:before {
+  content: "\e908";
+}
+
+.icon-tiktok:before {
+  content: "\e909";
+}
+
+.icon-viber:before {
+  content: "\e90a";
+}
+
+.icon-close:before {
+  content: "\e90b";
+}

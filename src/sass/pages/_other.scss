@@ -1,0 +1,141 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.other-page {
+  height: calc(100vh - 70px);
+  margin-top: 70px;
+  overflow: hidden;
+  padding-top: 0;
+  @media (max-width: $breakpoint-md) {
+    height: auto;
+    margin-top: 70px;
+    padding: 90px 0;
+  }
+
+  &.error {
+    @media (max-width: $breakpoint-md) {
+      padding-bottom: 140px;
+    }
+  }
+
+  &.thanks {
+
+  }
+
+  & .notification {
+    @include fontSize(18, 20);
+    line-height: 1.3;
+  }
+
+  & .description {
+    @include fontSize(18, 20);
+    line-height: 1.3;
+  }
+
+
+  &__content {
+
+  }
+
+  & .btn-primary {
+
+  }
+
+  &__number {
+    color: $accentColor;
+    @include fontSize(160, 300);
+    line-height: 1;
+
+    &-info {
+      color: $accentColor;
+      @include fontSize(50, 100);
+      @media (max-width: $breakpoint-md) {
+        margin-bottom: 77px;
+      }
+    }
+
+  }
+
+  &__img {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+
+  }
+
+  &__title {
+    font-weight: 900;
+    @include fontSize(70, 100);
+    line-height: 1;
+    color: $primaryColor;
+
+    margin-bottom: 30px;
+  }
+
+  &__description {
+    width: 80%;
+    @include fontSize(25, 30);
+    line-height: 1.2;
+    margin: 0 auto 67px auto;
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 40px;
+      width: 100%;
+    }
+  }
+}
+
+.error {
+
+  &__title {
+
+
+  }
+
+  &__img {
+    @media (max-width: $breakpoint-md) {
+      margin-top: 80px;
+    }
+  }
+
+  & .heading {
+    font-size: 30px;
+  }
+
+  & .notification {
+    margin: 45px 0;
+  }
+}
+
+
+.thanks {
+  & .heading {
+    @include fontSize(70, 100);
+    margin-bottom: 17px;
+    @media (max-width: $breakpoint-md) {
+
+    }
+  }
+
+  & .description {
+    @include fontSize(40, 50);
+    margin-bottom: 33px;
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 36px;
+    }
+  }
+
+  & .notification {
+    margin-bottom: 40px;
+  }
+
+  & .img {
+    margin: 0 auto;
+
+    &__wrap {
+      margin-top: 64px;
+      @media (max-width: $breakpoint-md) {
+        margin-top: 90px;
+      }
+    }
+  }
+}
