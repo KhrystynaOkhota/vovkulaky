@@ -5,7 +5,10 @@
 .news {
   &-card {
     display: block;
+    @media (max-width: $breakpoint-md) {
 
+      text-align: center;
+    }
     &__img {
       position: absolute;
       top: 0;
@@ -46,14 +49,20 @@
 }
 
 .s-news {
-  padding: 46px 0;
-
+  padding: 13px 0 100px 0;
+  @media (max-width: $breakpoint-md) {
+    padding:  0 0 100px 0;
+  }
   & .heading {
     margin-bottom: 33px;
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 20px;
+      text-align: center;
+    }
   }
 
   & .column {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
   }
 
   &--slider {

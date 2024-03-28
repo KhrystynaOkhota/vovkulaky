@@ -157,9 +157,10 @@ jQuery(function ($) {
     }
 
     //popup
-    let popupTop = 0;
+    let popupTop;
     _functions.removeScroll = function () {
         popupTop = $(window).scrollTop();
+        console.log(popupTop);
         $('html').css({
             "position": "fixed",
             "top": -$(window).scrollTop(),

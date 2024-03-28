@@ -7,7 +7,7 @@
   cursor: pointer;
   display: inline-block;
   text-decoration: none;
-  font-family: 'aa_bebasneue', sans-serif;
+  font-family: 'AA-BebasNeue', sans-serif;
 
   padding: 17px 38px 16px 38px;
   text-align: center;
@@ -23,23 +23,17 @@
   }
 
   &-primary {
-
     color: $whiteColor;
     background-color: $accentColor;
     border: none;
-
-
     min-width: 205px;
-
-
     @include transition(.3);
     @media (max-width: $breakpoint-lg) {
-
+      padding: 17px 15px 16px 15px;
     }
 
     &:hover {
-      color: $primaryColor;
-      border-color: #C9DAFF;
+      background-color: #D21214;
     }
   }
 

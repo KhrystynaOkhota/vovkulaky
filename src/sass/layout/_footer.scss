@@ -13,7 +13,7 @@
     max-width: 300px;
     display: block;
     margin-bottom: 14px;
-    @media (max-width: $breakpoint-md) {
+    @media (max-width: $breakpoint-lg) {
       position: relative;
       margin: 0 auto 10px auto;
     }
@@ -21,9 +21,32 @@
 
   & .copyright {
     @include fontSize(14, 16);
-    @media (max-width: $breakpoint-md) {
+    @media (max-width: $breakpoint-lg) {
       text-align: center;
       margin-bottom: 23px;
+    }
+  }
+
+  & .develop {
+    @media (min-width: $breakpoint-md) {
+      display: block;
+    }
+
+    &__logo {
+      @media (max-width: $breakpoint-md) {
+        width: 100px;
+      }
+    }
+
+    &__description {
+      font-size: 15px;
+      @media (min-width: $breakpoint-md) {
+        margin-bottom: 14px;
+      }
+      @media (max-width: 360px) {
+        margin-bottom: 14px;
+      }
+
     }
   }
 
@@ -100,27 +123,19 @@
     }
   }
 
-  .develop {
+  .mobile-navigation {
+    display: block;
+    @media (min-width: $breakpoint-md) {
+      display: none;
+    }
+  }
+
+  .main-navigation {
+    display: none;
     @media (min-width: $breakpoint-md) {
       display: block;
     }
 
-    &__logo {
-      @media (max-width: $breakpoint-md) {
-        width: 100px;
-      }
-    }
-
-    &__description {
-      font-size: 15px;
-      @media (min-width: $breakpoint-md) {
-        margin-bottom: 14px;
-      }
-      @media (max-width: 360px) {
-        margin-bottom: 14px;
-      }
-
-    }
   }
 }
 

@@ -28,6 +28,10 @@ html {
     padding: 10px 15px;
   }
 
+  @media (max-width: 400px) {
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
   &.transparent {
     background-color: transparent;
   }
@@ -58,6 +62,9 @@ html {
     position: relative;
     @media (max-width: $breakpoint-xl) {
       width: 230px;
+    }
+    @media (max-width: 400px) {
+      width: 200px;
     }
 
     & img {
@@ -93,18 +100,39 @@ html {
       }
       @media (max-width: $breakpoint-lg) {
 
-        display: flex;
+
         justify-content: center;
         flex-direction: column;
       }
     }
 
-    .menu {
-      @media (min-width: $breakpoint-md) {
-        height: 100%;
+    & .main-navigation {
+      display: none;
+      @media (min-width: $breakpoint-lg) {
+        display: flex;
       }
-      @media (max-width: $breakpoint-md) {
-        padding: 0 7px 90px 7px;
+    }
+
+    & .mobile-navigation {
+      display: none;
+      @media (max-width: $breakpoint-lg) {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+      }
+    }
+
+    .menu {
+      @media (min-width: $breakpoint-lg) {
+        height: 100%;
+
+        width: 80%;
+        display: flex;
+        justify-content: space-around;
+      }
+      @media (max-width: $breakpoint-lg) {
+        padding: 0 7px 60px 7px;
         text-align: center;
         margin: 0;
       }
@@ -117,7 +145,7 @@ html {
         position: relative;
         height: 100%;
 
-        @media (max-width: $breakpoint-md) {
+        @media (max-width: $breakpoint-lg) {
           padding: 0;
           display: block;
           height: auto;
@@ -131,7 +159,7 @@ html {
           color: $whiteColor;
           transition: color ease-out .4s;
           position: relative;
-          @media (max-width: $breakpoint-md) {
+          @media (max-width: $breakpoint-lg) {
             color: $whiteColor;
             padding-right: 0;
             text-align: center;
@@ -150,11 +178,11 @@ html {
           }
 
 
-          @media (min-width: $breakpoint-md) {
+          @media (min-width: $breakpoint-lg) {
             display: block;
           }
 
-          @media (max-width: $breakpoint-md) {
+          @media (max-width: $breakpoint-lg) {
             display: inline-block;
             position: relative;
           }
@@ -168,7 +196,7 @@ html {
           @media (max-width: $breakpoint-xl) {
             margin-right: 15px;
           }
-          @media (max-width: $breakpoint-md) {
+          @media (max-width: $breakpoint-lg) {
             margin: 0 0 40px 0;
           }
           @media (max-width: 360px) {
@@ -277,12 +305,14 @@ html {
       border-top: 1px solid rgba(255, 255, 255, 0.2);
     }
   }
+
+
 }
 
 .burger {
   &__wrap {
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 19px;
     background-color: transparent;
     border-radius: 5px;
     display: none;
