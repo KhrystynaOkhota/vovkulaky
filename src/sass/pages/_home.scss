@@ -4,7 +4,7 @@
 .decor {
   height: 1px;
   width: 100%;
-  max-width: 1150px;
+  max-width: 1202px;
   margin: 0 auto;
   background: rgba(255, 255, 255, .2);
 }
@@ -162,7 +162,9 @@
       }
 
       &__wrap {
-
+        @media (max-width: $breakpoint-md) {
+          margin-top: 0;
+        }
       }
     }
 
@@ -678,21 +680,26 @@
 
 .s-personal-training {
 
-  &.home{
-
+  &.home {
+    padding-bottom: 111px;
+    @media (max-width: $breakpoint-md) {
+      padding-bottom: 45px;
+    }
   }
-  &.gym{
+
+  &.gym {
     padding: 96px 0 102px 0;
     @media (max-width: $breakpoint-md) {
       padding: 50px 0;
     }
   }
- /* margin-bottom: 98px;
-  margin-top: 88px;
-  @media (max-width: $breakpoint-md) {
-    margin-bottom: 45px;
-  }
-*/
+
+  /* margin-bottom: 98px;
+   margin-top: 88px;
+   @media (max-width: $breakpoint-md) {
+     margin-bottom: 45px;
+   }
+ */
   & .description {
     margin-bottom: 32px;
   }

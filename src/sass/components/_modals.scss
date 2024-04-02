@@ -217,9 +217,15 @@
 
 .cta {
   & .popup-container {
+    min-width: 580px;
     max-width: 580px;
     @media (max-width: $breakpoint-md) {
       padding: 40px 10px;
+      min-width: 335px;
+    }
+
+    @media (max-width: 400px) {
+      min-width: 290px;
     }
   }
 }

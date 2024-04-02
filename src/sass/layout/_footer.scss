@@ -32,6 +32,13 @@
       display: block;
     }
 
+    &__company {
+      font-size: 16px;
+      @media (max-width: $breakpoint-md) {
+        padding-left: 5px;
+      }
+    }
+
     &__logo {
       @media (max-width: $breakpoint-md) {
         width: 100px;
