@@ -31,6 +31,7 @@ html {
   @media (max-width: 400px) {
     padding-top: 7px;
     padding-bottom: 7px;
+    height:60px;
   }
   &.transparent {
     background-color: transparent;
@@ -58,6 +59,7 @@ html {
   &-logo {
     display: block;
     width: 360px;
+    height: 62px;
     z-index: 3;
     position: relative;
     @media (max-width: $breakpoint-xl) {
@@ -69,8 +71,10 @@ html {
     }
 
     & img {
+      height:100%;
+      width:100%;
       object-fit: contain;
-      object-position: center;
+      object-position: left;
       transition: all .5s ease;
     }
   }

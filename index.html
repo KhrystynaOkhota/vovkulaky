@@ -12,7 +12,7 @@
     <title>Vovkulaky</title>
     <meta name="description" content=""/>
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css"/>
-
+    <link rel="stylesheet" href="assets/css/lightgallery.min.css"/>
     <link rel="stylesheet" href="assets/css/app.css"/>
 
 </head>
@@ -386,8 +386,10 @@
             <div class="row ">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12  text-center">
                     <h3 class="heading heading-font text-uppercase text-xl text-regular mb-33">Розклад</h3>
-                    <div class="img__wrap">
-                        <img src="assets/img/main-3.png" alt="" class="img ">
+                    <div id="lightgallery">
+                        <div class="img__wrap" data-src="./assets/img/banner-contacts.jpg">
+                            <img src="assets/img/banner-contacts.jpg" alt="" class="img ">
+                        </div>
                     </div>
                     <div class="description heading-font">Графік може змінюватись, для уточнення звертайтесь за нашими
                         <a href="">Контактами</a></div>
@@ -953,31 +955,46 @@
 
             <div class="row m-row">
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 column">
-                    <div class="club-card__item text-center">
-                        <div class="club-card__img-wrap">
+
+                    <div class="club-card__img-wrap d-none d-md-block">
+                        <img src="assets/img/news-1.png" alt="" class="club-card__img ">
+
+                        <img src="assets/img/logo.svg" class="club-card__logo">
+                        <div class="club-card__heading text-uppercase heading-font text-l">Basic</div>
+                    </div>
+
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 column">
+                    <div class="club-card__info">
+                        <div class="club-card__name text-l heading-font">BASIC</div>
+                        <div class="club-card__img-wrap d-block d-md-none">
                             <img src="assets/img/news-1.png" alt="" class="club-card__img ">
 
                             <img src="assets/img/logo.svg" class="club-card__logo">
                             <div class="club-card__heading text-uppercase heading-font text-l">Basic</div>
                         </div>
+                        <div class="text-m club-card__description">
+                            Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали
+                            от
+                            всех живут они в буквенных домах на берегу Семантика
+                        </div>
 
 
+                        <div class="text-m club-card__description d-block d-md-none">
+                            алеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от
+                            всех
+                            живут они в буквенных домах на берегу Семантика большого языкового океана. Маленький ручеек
+                            Даль
+                            журчит по всей стране и обеспечивает ее всеми необходимыми правилами.
+                        </div>
+                        <div class="btn btn-primary open-popup" data-rel="cta">Замовити</div>
                     </div>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 column">
-                    <div class="club-card__name text-l heading-font">BASIC</div>
-                    <div class="text-m club-card__description">
-                        Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от
-                        всех живут они в буквенных домах на берегу Семантика
-                    </div>
-
-                    <div class="btn btn-primary open-popup" data-rel="cta">Замовити</div>
                 </div>
 
             </div>
             <div class="row m-row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 column">
-                    <div class="text-m club-card__description">
+                    <div class="text-m club-card__description d-none d-md-block">
                         алеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от
                         всех
                         живут они в буквенных домах на берегу Семантика большого языкового океана. Маленький ручеек Даль
@@ -1135,9 +1152,6 @@
 
     document.querySelectorAll('.card').forEach(item => {
         item.addEventListener('click', event => {
-
-            console.log(item);
-            console.log(event);
             item.classList.toggle('rotated');
         });
     });
@@ -1200,6 +1214,16 @@
         });
     });
 </script>
+
+
+<script src="assets/js/lightgallery-all.min.js" defer></script>
+
+<script>
+    $(document).ready(function () {
+        $('#lightgallery').lightGallery();
+    });
+</script>
+
 </body>
 </html>
 
