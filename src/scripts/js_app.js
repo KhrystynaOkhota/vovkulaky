@@ -156,6 +156,9 @@ jQuery(function ($) {
         if (activeSlideVideo.length) activeSlideVideo[0].play();
     }
 
+
+
+
     //popup
     let popupTop;
     _functions.removeScroll = function () {
@@ -182,7 +185,7 @@ jQuery(function ($) {
         // $('.popup-content').removeClass('animate-away').addClass('animate-in');
 
         $(popup + ', .popup-wrapper').addClass('active');
-        _functions.removeScroll();
+       // _functions.removeScroll();
     };
 
     _functions.closePopup = function () {
@@ -191,7 +194,7 @@ jQuery(function ($) {
         //$('.popup-content').removeClass('animate-in').addClass('animate-away');
 
         $('.popup-wrapper, .popup-content').removeClass('active');
-        _functions.addScroll();
+       // _functions.addScroll();
     };
 
     $(document).on('click', '.open-popup', function (e) {

@@ -286,6 +286,18 @@
     @media (max-width: $breakpoint-md) {
       margin-bottom: 60px;
     }
+
+    & .row {
+      @media (min-width: $breakpoint-md) {
+        flex-direction: row-reverse;
+      }
+    }
+
+    .s-about__img-wrap {
+      @media (max-width: $breakpoint-md) {
+        margin-top: 21px;
+      }
+    }
   }
 
   &.reverse {
@@ -309,7 +321,7 @@
   }
 
   & .heading {
-    margin-top: 30px;
+    margin-bottom: 30px;
   }
 
   &__img {
@@ -666,7 +678,7 @@
 .s-club-cards {
   padding: 98px 0 100px 0;
   @media (max-width: $breakpoint-md) {
-    padding: 50px 0;
+    padding: 50px 0 10px 0;
   }
 
   &.bg {
@@ -702,6 +714,14 @@
  */
   & .description {
     margin-bottom: 32px;
+  }
+
+  & .btn-primary {
+    @media (max-width: $breakpoint-md) {
+      margin: 0 auto;
+      display: block;
+      max-width: 280px;
+    }
   }
 
   & .img {

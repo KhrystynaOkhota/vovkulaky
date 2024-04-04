@@ -17,12 +17,6 @@ html {
   visibility: visible;
   opacity: 1;
   background-color: #000;
-  transition: -webkit-transform .8s;
-  transition: all .8s;
-  transition: all .8s, -webkit-transform .8s;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  will-change: transform;
   padding: 9px 60px 8px 60px;
   @media (max-width: $breakpoint-xl) {
     padding: 10px 15px;
@@ -258,10 +252,11 @@ html {
     }
 
     @media (max-width: $breakpoint-lg) {
-      height: calc(100vh - 60px);
+
       background-color: #000;
       position: fixed;
       top: 60px;
+      bottom: 0;
       transition: all 1.2s ease;
       z-index: 2;
       width: 100%;
@@ -373,13 +368,3 @@ html {
   }
 }
 
-header.is-visible {
-
-  &:after {
-    content: '';
-    right: 0;
-
-    transition: all .5s ease;
-  }
-
-}

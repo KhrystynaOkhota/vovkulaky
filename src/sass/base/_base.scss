@@ -118,8 +118,8 @@ body {
 
 .body-padding {
   height: 79px;
-  @media (max-width: $breakpoint-md) {
-   height: 70px;
+  @media (max-width: $breakpoint-xl) {
+   height: 60px;
   }
 }
 
