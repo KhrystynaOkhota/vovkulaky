@@ -18,8 +18,11 @@ html {
   opacity: 1;
   background-color: #000;
   padding: 9px 60px 8px 60px;
+  @media (max-width:1322px) {
+    padding: 10px 0;
+  }
   @media (max-width: $breakpoint-xl) {
-    padding: 10px 15px;
+    padding: 10px 20px;
   }
 
   @media (max-width: 400px) {
@@ -44,6 +47,9 @@ html {
   }
 
   &-main {
+    @media (max-width:1322px) {
+      max-width: 1179px;
+    }
     @media (max-width: $breakpoint-lg) {
       height: 100%;
     }
