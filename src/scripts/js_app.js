@@ -310,3 +310,35 @@ $('.preload__btn').on('click', function () {
         $(this).parents(".preload-entry").find('.--pause').removeClass("d-none").addClass("d-block");
     }
 });
+
+
+document.querySelectorAll('.card').forEach(item => {
+    item.addEventListener('click', event => {
+        item.classList.toggle('rotated');
+    });
+});
+
+$(function () {
+    $('a[href*="#"]:not([href="#"])').click(function () {
+        $('.menu-item').removeClass('current-menu-item');
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            if (target.length) {
+                $('html, body').animate({
+                    scrollTop: target.offset().top - $('.header').innerHeight()
+                }, 1000);
+                $(this).parents('.menu-item').addClass('current-menu-item');
+                $(".burger").removeClass("active");
+                $(".navbar").removeClass("is-visible");
+                $('html').removeClass('overflow-menu');
+                $('header').removeClass('open-menu');
+                return false;
+            }
+        }
+    });
+});
+
+$(document).ready(function () {
+    $('#lightgallery').lightGallery();
+});
